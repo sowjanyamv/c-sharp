@@ -1,3 +1,57 @@
 welcome
-123456789
-got it!!
+
+1.Write a program, which reads from the console N integers and prints them in reversed order. Use the Stack<int> class.
+
+using System;
+using System.Collections.Generic;
+using System.Text;
+
+namespace ConsoleApp5
+{
+	class ReverseStack
+	{
+		Stack<int> Number;
+			
+
+		public void GetData()
+		{
+			Number = new Stack<int>();
+			while (true)
+			{
+				var input = Console.ReadLine();
+				if (input == String.Empty)
+				{
+					return;
+				}
+				else
+				{
+					Number.Push(int.Parse(input));
+				}
+			}
+		}
+
+		public string Reverse()
+		{
+			string ReversedStack = null;
+			while (Number.Count > 0)
+			{
+				ReversedStack += Number.Pop()+"   ";
+				
+			}
+			return ReversedStack;
+		}
+	}
+
+	class ReverseinStack
+	{
+		public static void Main()
+		{
+			ReverseStack r = new ReverseStack();
+
+			Console.WriteLine("Enter the Numbers :- ");
+			r.GetData();
+
+			Console.WriteLine("Reversed Numbers are:" + r.Reverse());
+		}
+	}
+}

@@ -1,2 +1,17 @@
-hello
-understanding git
+hello!!
+
+SQL
+
+1.Which are the products supplied by Specialty Biscuits, Ltd. and the category Name.
+SELECT P.ProductName,C.CategoryName
+FROM Categories C,Products P,Suppliers S
+WHERE C.CategoryID=P.CategoryID
+AND P.SupplierID=S.SupplierID
+AND SupplierName='Specialty Biscuits, Ltd.';
+
+2.How many products are sold by each suppliers
+SELECT S.SupplierID,COUNT(ProductID) AS 'TOTAL_PCOUNT'
+FROM [Products] P,[Suppliers] S
+WHERE P.SupplierID=S.SupplierID
+GROUP BY S.SupplierID;
+

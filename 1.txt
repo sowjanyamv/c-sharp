@@ -1,4 +1,5 @@
 Hello!!
+
 WELCOME !!!
 
 1.Write a program that reads from the console a sequence of positive integer numbers. The sequence ends when an empty line is entered. Print the sequence sorted in ascending order.

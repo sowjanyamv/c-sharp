@@ -71,3 +71,4 @@ namespace ConsoleApp5
 	}
 }
 
+thnakyou all!

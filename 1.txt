@@ -1,17 +1,71 @@
 hello!!
 
-SQL
+3.	Write a program that reads from the console a sequence of positive integer numbers. The sequence ends when an empty line is entered. Print the sequence sorted in ascending order.
+using System;
+using System.Collections.Generic;
+using System.Text;
 
-1.Which are the products supplied by Specialty Biscuits, Ltd. and the category Name.
-SELECT P.ProductName,C.CategoryName
-FROM Categories C,Products P,Suppliers S
-WHERE C.CategoryID=P.CategoryID
-AND P.SupplierID=S.SupplierID
-AND SupplierName='Specialty Biscuits, Ltd.';
+namespace ConsoleApp5
+{
+	class SortedNumbers
+	{
+		List<int> Numbers = new List<int>();
 
-2.How many products are sold by each suppliers
-SELECT S.SupplierID,COUNT(ProductID) AS 'TOTAL_PCOUNT'
-FROM [Products] P,[Suppliers] S
-WHERE P.SupplierID=S.SupplierID
-GROUP BY S.SupplierID;
+		public void GetData()
+		{
+			while (true)
+			{
+				string value = Console.ReadLine();
+				if (value == String.Empty)
+				{
+					return;
+				}
+				else
+				{
+					Numbers.Add(int.Parse(value));
+				}
+			}
+		}
+
+
+		public void Sort()
+		{
+			
+			Comparator c = new Comparator();
+			Numbers.Sort(c);
+		}
+
+		public string Printdata()
+		{
+			var data = string.Empty;
+			foreach (var n in Numbers)
+			{
+				data += n + "  ";
+			}
+			return data;
+		}
+	}
+
+	class Comparator : IComparer<int>
+	{
+		public int Compare(int a, int b)
+		{
+			return a.CompareTo(b);
+		}
+	}
+
+	class SortedAscendingNumbers
+	{
+		public static void Main()
+		{
+			SortedNumbers S = new SortedNumbers();
+			Console.WriteLine("Enter the Numbers : ");
+			S.GetData();
+			S.Sort();
+
+			Console.Write("Sorted values in list are : ");
+			Console.Write(S.Printdata() + "  ");
+		}
+	}
+}
 

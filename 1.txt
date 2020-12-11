@@ -1,4 +1,9 @@
 Hello!!
+<<<<<<< HEAD
+=======
+
+WELCOME !!!
+>>>>>>> b18e9d8b5b806dbb5cc353cb3cd4f86ea2814223
 
 WELCOME !!!
 
@@ -72,3 +77,8 @@ namespace ConsoleApp5
 	}
 }
 
+<<<<<<< HEAD
+=======
+
+
+>>>>>>> b18e9d8b5b806dbb5cc353cb3cd4f86ea2814223
